@@ -1,0 +1,70 @@
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#main-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+#main-container canvas{
+    position: absolute;
+    top :0;
+    background-color: rgb(246, 246, 232);
+    z-index: -1;
+}
+
+.lot-block {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 500px;
+}
+
+.block-attr-comingup {
+    
+}
+
+.block-attr-ended {
+
+}
+
+/* temporary */
+
+#container-announcement {
+    height: 500px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(246, 246, 232, 0) 100%);
+    color: white;
+    font-size: 64px;
+    text-align: center;
+    line-height: 450px;
+}
+
+#random-hash-1 {
+    background: url('img1.jpg');
+    background-size: cover;
+    
+    color: rgba(255, 255, 255, 0);
+    font-size: 64px;
+    text-align: center;
+    line-height: 450px;
+}
+
+#random-hash-1:hover {
+    color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-color: #0099cc;
+    border-width: 10px;
+}
+
+#random-hash-2 {
+    background: url('img2.jpg');
+    background-size: cover;
+}
+
+#random-hash-3 {
+    background: url('img3.jpg');
+    background-size: cover;
+}
