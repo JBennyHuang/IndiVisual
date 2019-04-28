@@ -18,9 +18,9 @@
 }
 
 .lot-block {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 500px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 650px;
 }
 
 .block-attr-comingup {
@@ -42,6 +42,49 @@
     line-height: 450px;
 }
 
+.wardrobe {
+    height: 1000px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.wardrobe-item {
+    height: 100%;
+    width: 30%;
+    display: inline-block;
+}
+
+#item-1 {
+    background: url('img1.jpg');
+    background-size: cover;
+}
+
+#item-2 {
+    background: url('img2.jpg');
+    background-size: cover;
+}
+
+#item-3 {
+    background: url('img3.jpg');
+    background-size: cover;
+}
+
+#item-4 {
+    background: url('img1.jpg');
+    background-size: cover;
+}
+
+#item-5 {
+    background: url('img2.jpg');
+    background-size: cover;
+}
+
+#item-6 {
+    background: url('img3.jpg');
+    background-size: cover;
+}
+
 #random-hash-1 {
     background: url('img1.jpg');
     background-size: cover;
@@ -56,12 +99,13 @@
     color: rgba(255, 255, 255, 1);
     border-style: solid;
     border-color: #0099cc;
-    border-width: 10px;
+    border-width: -5px;
 }
 
 #random-hash-2 {
     background: url('img2.jpg');
     background-size: cover;
+    
 }
 
 #random-hash-3 {
