@@ -1,3 +1,13 @@
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 10;
+    overflow: hidden;
+}
+
 .navbar-nav {
     position: absolute;
     left: 50%;
@@ -6,14 +16,15 @@
 
 #main-container {
     position: absolute;
+    left: 0;
     width: 100%;
     height: auto;
+    overflow: hidden;
 }
 
 #main-container canvas{
     position: absolute;
     top :0;
-    background-color: rgb(246, 246, 232);
     z-index: -1;
 }
 
@@ -35,15 +46,14 @@
 
 #container-announcement {
     height: 500px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(246, 246, 232, 0) 100%);
-    color: white;
+    color: black;
     font-size: 64px;
     text-align: center;
     line-height: 450px;
 }
 
 .wardrobe {
-    height: 1000px;
+    height: 750px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -51,7 +61,7 @@
 
 .wardrobe-item {
     height: 100%;
-    width: 30%;
+    width: 400px;
     display: inline-block;
 }
 
