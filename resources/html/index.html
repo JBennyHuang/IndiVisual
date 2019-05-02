@@ -6,6 +6,18 @@
 </head>
 
 <body>
+    <div id='main-container'>
+        <div class='row'>
+            <div id='container-announcement' class='col mx-auto'>
+                <p>Fashion your Reality.</p>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div id='container-wardrobe' class='mx-auto'></div>
+        </div>
+    </div>
+
     <div id='main-header'>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">IndiVisual</a>
@@ -21,19 +33,6 @@
                 </li>
             </ul>
         </nav>
-    </div>
-
-    <div id='main-container'>
-        <div class='row'>
-            <div id='container-announcement' class='col'>
-                <p>Fashion your Reality.</p>
-            </div>
-        </div>
-
-        <div class='row'>
-            <div id='container-wardrobe' class='col mx-5 my-5'>
-            </div>
-        </div>
     </div>
 
 </body>
@@ -148,6 +147,19 @@
 
     var wardrobe = document.getElementById('container-wardrobe');
 
+    wardrobe.addEventListener('scroll', function () {
+        if (this.scrollLeft == 0) {
+            this.scrollLeft = this.offsetWidth;
+        }
+        if (this.scrollLeft >= this.offsetWidth) {
+            this.scrollLeft = 0;
+        }
+
+        console.log("offsetwidth = " + this.offsetWidth.toString());
+        console.log("clientwidth = " + this.clientWidth.toString());
+        console.log("scrollleft = " + this.scrollLeft.toString())
+    });
+
     display_wardrobe_items = function (items) {
         for (var i = 0; i < items.length; i++) {
             var wardrobe_item = document.createElement('div');
@@ -164,6 +176,8 @@
     };
 
     display_wardrobe_items(items);
+
+    wardrobe.scrollLeft = wardrobe.offsetWidth / 2;
 
 </script>
 

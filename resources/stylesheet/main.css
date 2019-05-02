@@ -4,7 +4,6 @@
     left: 0;
     width: 100%;
 
-    z-index: 10;
     overflow: hidden;
 }
 
@@ -17,6 +16,9 @@
     left: 0;
     width: 100%;
     height: auto;
+
+    background-color:  rgba(240, 248, 255, 0.7);
+
     overflow: hidden;
 }
 
@@ -27,12 +29,9 @@
 }
 
 /* temporary */
-.row {
-    background-color: rgba(240, 248, 255, 0.7);
-}
 
 #container-announcement {
-    height: 500px;
+    height: 400px;
     color: black;
     font-size: 64px;
     text-align: center;
@@ -40,21 +39,40 @@
 }
 
 #container-wardrobe {
-    height: 650px;
-    overflow: hidden;
+    height: 500px;
+    width: 1500px;
+
+    padding-bottom: 20px;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
     white-space: nowrap;
+
+}::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
 }
 
 .wardrobe-item {
     height: 100%;
-    width: 400px;
+    width: 300px;
 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
 
     display: inline-block;
 
-    margin-right: 5px;
-    margin-left: 5px;
+    margin: 5px;
 
     border-radius: 25px;
+
+    box-shadow: 20px 0px  rgba(200, 200, 200, 1);
+}
+
+.wardrobe-item:hover {
+    background-color:  rgba(220, 220, 220, 0.7);
+
+    box-shadow: 20px 0px  rgba(160, 160, 160, 0.7);
+
+    cursor: pointer;
 }
