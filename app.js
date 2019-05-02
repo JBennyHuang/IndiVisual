@@ -9,6 +9,9 @@ app.use(express.static('resources/javascript'));
 // bootstrap
 app.use(express.static('node_modules/bootstrap/dist'));
 
+// jquery
+app.use(express.static('node_modules/jquery/dist'))
+
 // temp // will be moved to database
 app.use(express.static('resources/images'));
 

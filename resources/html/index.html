@@ -14,30 +14,39 @@
         </div>
 
         <div class='row'>
-            <div id='container-wardrobe' class='mx-auto'></div>
+            <div id='container-wardrobe' class='carousel slide mx-auto' data-ride="carousel">
+                <div class="carousel-inner">
+                </div>
+                <a class="carousel-control-prev" href="#container-wardrobe" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#container-wardrobe" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div id='main-header'>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">IndiVisual</a>
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">This Season</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Ended</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <div id='main-header'>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">IndiVisual</a>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">This Season</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ended</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
 </body>
 
 <script src='particles.min.js'></script>
+<script src='jquery.min.js'></script>
 <script src='js/bootstrap.min.js'></script>
 <script>
     particlesJS("main-container", {
@@ -117,7 +126,7 @@
     };
     requestAnimationFrame(update);
 
-    // wardrobe-item
+    // wardrobe-item // temporary will move to database
 
     var item_1 = {
         background_image: 'img1.jpg'
@@ -131,53 +140,57 @@
         background_image: 'img3.png'
     }
 
-    var item_4 = {
-        background_image: 'img1.jpg'
-    }
-
-    var item_5 = {
-        background_image: 'img2.jpg'
-    }
-
-    var item_6 = {
-        background_image: 'img3.png'
-    }
-
-    var items = [item_1, item_2, item_3, item_4, item_5, item_6];
+    var items = [[item_1, item_1, item_1, item_1], [item_1, item_2, item_3], [item_2, item_2, item_2]];
 
     var wardrobe = document.getElementById('container-wardrobe');
 
-    wardrobe.addEventListener('scroll', function () {
-        if (this.scrollLeft == 0) {
-            this.scrollLeft = this.offsetWidth;
-        }
-        if (this.scrollLeft >= this.offsetWidth) {
-            this.scrollLeft = 0;
-        }
-
-        console.log("offsetwidth = " + this.offsetWidth.toString());
-        console.log("clientwidth = " + this.clientWidth.toString());
-        console.log("scrollleft = " + this.scrollLeft.toString())
-    });
-
     display_wardrobe_items = function (items) {
         for (var i = 0; i < items.length; i++) {
-            var wardrobe_item = document.createElement('div');
-            wardrobe_item.setAttribute('class', 'wardrobe-item');
+            var carousel_item = document.createElement('div');
+            carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ''));
 
-            var wardrobe_item_image = document.createElement('div')
-            wardrobe_item_image.style.background = 'url(' + items[i].background_image + ') center center / contain no-repeat';
-            wardrobe_item_image.style.width = '100%';
-            wardrobe_item_image.style.height = '100%';
-            wardrobe_item.appendChild(wardrobe_item_image);
+            var carousel_item_row = document.createElement('div');
+            carousel_item_row.setAttribute('class', 'row')
 
-            wardrobe.appendChild(wardrobe_item);
+            for (var j = 0; j < items[i].length; j++) {
+                var wardrobe_item = document.createElement('div');
+                wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto');
+
+                var wardrobe_item_image = document.createElement('div')
+                wardrobe_item_image.style.background = 'url(' + items[i][j].background_image + ') center center / contain no-repeat';
+                wardrobe_item_image.style.width = '100%';
+                wardrobe_item_image.style.height = '100%';
+
+                wardrobe_item.appendChild(wardrobe_item_image);
+                carousel_item_row.appendChild(wardrobe_item);
+            }
+
+            carousel_item.appendChild(carousel_item_row);
+            wardrobe.firstElementChild.appendChild(carousel_item);
         }
     };
 
     display_wardrobe_items(items);
 
-    wardrobe.scrollLeft = wardrobe.offsetWidth / 2;
+    wardrobe.addEventListener('wheel', function (event) {
+        event.preventDefault();
+
+        var delta;
+
+        if (event.wheelDelta) {
+            delta = event.wheelDelta;
+        } else {
+            delta = -1 * event.deltaY;
+        }
+
+        if (delta >= 0) {
+            $('.carousel-control-prev').click();
+        } else {
+            $('.carousel-control-next').click();
+        }
+
+        console.log(delta >= 0);
+    });
 
 </script>
 
