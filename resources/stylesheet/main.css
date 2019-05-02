@@ -8,10 +8,8 @@
     overflow: hidden;
 }
 
-.navbar-nav {
+.navbar-brand {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 #main-container {
@@ -28,21 +26,10 @@
     z-index: -1;
 }
 
-.lot-block {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    height: 650px;
-}
-
-.block-attr-comingup {
-    
-}
-
-.block-attr-ended {
-
-}
-
 /* temporary */
+.row {
+    background-color: rgba(240, 248, 255, 0.7);
+}
 
 #container-announcement {
     height: 500px;
@@ -52,73 +39,22 @@
     line-height: 450px;
 }
 
-.wardrobe {
-    height: 750px;
-    overflow-x: scroll;
-    overflow-y: hidden;
+#container-wardrobe {
+    height: 650px;
+    overflow: hidden;
     white-space: nowrap;
 }
 
 .wardrobe-item {
     height: 100%;
     width: 400px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
     display: inline-block;
-}
 
-#item-1 {
-    background: url('img1.jpg');
-    background-size: cover;
-}
+    margin-right: 5px;
+    margin-left: 5px;
 
-#item-2 {
-    background: url('img2.jpg');
-    background-size: cover;
-}
-
-#item-3 {
-    background: url('img3.jpg');
-    background-size: cover;
-}
-
-#item-4 {
-    background: url('img1.jpg');
-    background-size: cover;
-}
-
-#item-5 {
-    background: url('img2.jpg');
-    background-size: cover;
-}
-
-#item-6 {
-    background: url('img3.jpg');
-    background-size: cover;
-}
-
-#random-hash-1 {
-    background: url('img1.jpg');
-    background-size: cover;
-    
-    color: rgba(255, 255, 255, 0);
-    font-size: 64px;
-    text-align: center;
-    line-height: 450px;
-}
-
-#random-hash-1:hover {
-    color: rgba(255, 255, 255, 1);
-    border-style: solid;
-    border-color: #0099cc;
-    border-width: -5px;
-}
-
-#random-hash-2 {
-    background: url('img2.jpg');
-    background-size: cover;
-    
-}
-
-#random-hash-3 {
-    background: url('img3.jpg');
-    background-size: cover;
+    border-radius: 25px;
 }

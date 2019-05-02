@@ -9,60 +9,33 @@
     <div id='main-header'>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">IndiVisual</a>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">This Season</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ended</a>
                 </li>
             </ul>
         </nav>
     </div>
+
     <div id='main-container'>
         <div class='row'>
             <div id='container-announcement' class='col'>
-                Intro
+                <p>Fashion your Reality.</p>
             </div>
         </div>
 
-        <div class='row wardrobe'>
-            <div class='col'>
-                <div id='item-1' class='wardrobe-item'></div>
-                <div id='item-2' class='wardrobe-item'></div>
-                <div id='item-3' class='wardrobe-item'></div>
-                <div id='item-4' class='wardrobe-item'></div>
-                <div id='item-5' class='wardrobe-item'></div>
-                <div id='item-6' class='wardrobe-item'></div>
+        <div class='row'>
+            <div id='container-wardrobe' class='col mx-5 my-5'>
             </div>
         </div>
-
-        <!--lot blocks-->
-        <!-- TEMPLATE for lot block
-        <div class='row lot-block'>
-            <div id='random-hash-1' class='col'>MAIN LOT</div>
-        </div>  
-        -->
-        <div class='row lot-block'>
-            <div id='random-hash-1' class='col'>Wardrobe</div>
-        </div>
-        <div class='row lot-block'>
-
-            <div id='random-hash-2' class='col-12'></div>
-
-
-        </div>
-        <div class='row lot-block'>
-
-            <div id='random-hash-3' class='col'></div>
-
-        </div>
     </div>
-    </div>
+
 </body>
 
 <script src='particles.min.js'></script>
@@ -106,7 +79,7 @@
                 }
             },
             "size": {
-                "value": 10,
+                "value": 0,
                 "random": true,
                 "anim": {
                     "enable": false,
@@ -124,7 +97,7 @@
             },
             "move": {
                 "enable": true,
-                "speed": 12,
+                "speed": 3,
                 "direction": "none",
                 "random": false,
                 "straight": false,
@@ -144,6 +117,54 @@
         requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
+
+    // wardrobe-item
+
+    var item_1 = {
+        background_image: 'img1.jpg'
+    }
+
+    var item_2 = {
+        background_image: 'img2.jpg'
+    }
+
+    var item_3 = {
+        background_image: 'img3.png'
+    }
+
+    var item_4 = {
+        background_image: 'img1.jpg'
+    }
+
+    var item_5 = {
+        background_image: 'img2.jpg'
+    }
+
+    var item_6 = {
+        background_image: 'img3.png'
+    }
+
+    var items = [item_1, item_2, item_3, item_4, item_5, item_6];
+
+    var wardrobe = document.getElementById('container-wardrobe');
+
+    display_wardrobe_items = function (items) {
+        for (var i = 0; i < items.length; i++) {
+            var wardrobe_item = document.createElement('div');
+            wardrobe_item.setAttribute('class', 'wardrobe-item');
+
+            var wardrobe_item_image = document.createElement('div')
+            wardrobe_item_image.style.background = 'url(' + items[i].background_image + ') center center / contain no-repeat';
+            wardrobe_item_image.style.width = '100%';
+            wardrobe_item_image.style.height = '100%';
+            wardrobe_item.appendChild(wardrobe_item_image);
+
+            wardrobe.appendChild(wardrobe_item);
+        }
+    };
+
+    display_wardrobe_items(items);
+
 </script>
 
 </html>
