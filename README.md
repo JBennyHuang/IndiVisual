@@ -14,9 +14,13 @@
     - Execute the following command `$ nodemon app`
     - Hit `localhost:3000` on your browser URL bar
 
-> Note that the commands above are executed using Git Bash, commands might differ depending on your terminal
+### Remarks 
+- Note that the commands above are executed using Git Bash, commands might differ depending on your terminal
+- Every time `package.json` is updated, you should execute `$ npm install` after you pull
+- Every time you (un)install a node module, you should save it inside `package.json`
+	> To do that, you must append `--save` to your (un)installation command, for example `$ npm install express --save`
 ---
 
 ## TODOs
 
-Updated: May 3, 2019 [18:08]
+Updated: May 3, 2019 [19:21]

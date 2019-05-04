@@ -11,7 +11,8 @@
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
     "jquery": "^3.4.1",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "python-shell": "^1.0.7"
   },
   "repository": {
     "type": "git",
