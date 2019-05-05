@@ -99,7 +99,7 @@ display_wardrobe_items = function (items) {
         carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ''));
 
         var carousel_item_row = document.createElement('div');
-        carousel_item_row.setAttribute('class', 'row')
+        carousel_item_row.setAttribute('class', 'row' + ' h-100')
 
         for (var j = 0; j < items[i].length; j++) {
             var wardrobe_item = document.createElement('div');
