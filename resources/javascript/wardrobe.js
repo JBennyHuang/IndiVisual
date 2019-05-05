@@ -78,11 +78,11 @@ requestAnimationFrame(update);
 // wardrobe-item // temporary will move to database
 
 var item_1 = {
-    background_image: 'img1.jpg'
+    background_image: 'img1.png'
 }
 
 var item_2 = {
-    background_image: 'img2.jpg'
+    background_image: 'img2.png'
 }
 
 var item_3 = {
