@@ -78,11 +78,11 @@ requestAnimationFrame(update);
 // wardrobe-item // temporary will move to database
 
 var item_1 = {
-    background_image: 'img1.jpg'
+    background_image: 'img1.png'
 }
 
 var item_2 = {
-    background_image: 'img2.jpg'
+    background_image: 'img2.png'
 }
 
 var item_3 = {
@@ -96,14 +96,14 @@ var wardrobe = document.getElementById('container-wardrobe');
 display_wardrobe_items = function (items) {
     for (var i = 0; i < items.length; i++) {
         var carousel_item = document.createElement('div');
-        carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ''));
+        carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ' h-100'));
 
         var carousel_item_row = document.createElement('div');
-        carousel_item_row.setAttribute('class', 'row')
+        carousel_item_row.setAttribute('class', 'row h-100')
 
         for (var j = 0; j < items[i].length; j++) {
             var wardrobe_item = document.createElement('div');
-            wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded');
+            wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded h-100');
 
             var wardrobe_item_image = document.createElement('div')
             wardrobe_item_image.style.background = 'url(' + items[i][j].background_image + ') center center / contain no-repeat';
