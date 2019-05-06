@@ -69,8 +69,7 @@ particlesJS("main-container", {
     },
     "retina_detect": true
 });
-let update;
-update = function () {
+let update = () => {
     requestAnimationFrame(update);
 };
 requestAnimationFrame(update);
@@ -94,7 +93,6 @@ const items = [[item_1, item_1, item_1, item_1], [item_1, item_2, item_3], [item
 
 const wardrobe = document.getElementById('container-wardrobe');
 
-
 // function that displays the items 
 let display_wardrobe_items = (items) => {
     for (let i = 0; i < items.length; i++) {
@@ -113,6 +111,7 @@ let display_wardrobe_items = (items) => {
             wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded');
 
             let wardrobe_item_image = document.createElement('div')
+            wardrobe_item_image.setAttribute('class', 'wardrobe-item mx-auto rounded h-100 w-100');
             wardrobe_item_image.style.background = 'url(' + items[i][j].background_image + ') center center / contain no-repeat';
 
             // append this 'div' into the larger 'div' for the set
@@ -127,26 +126,8 @@ let display_wardrobe_items = (items) => {
 
 display_wardrobe_items(items);
 
-wardrobe.addEventListener('resize', function (event) {
-    alert('resized');
+window.addEventListener('resize', (event) => {
+    // alert(wardrobe.style.width);
 });
 
-wardrobe.addEventListener('wheel', function (event) {
-    event.preventDefault();
 
-    let delta;
-
-    if (event.wheelDelta) {
-        delta = event.wheelDelta;
-    } else {
-        delta = -1 * event.deltaY;
-    }
-
-    if (delta >= 0) {
-        $('.carousel-control-prev').click();
-    } else {
-        $('.carousel-control-next').click();
-    }
-
-    console.log(delta >= 0);
-});
