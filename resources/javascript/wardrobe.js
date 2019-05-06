@@ -99,16 +99,15 @@ display_wardrobe_items = function (items) {
         carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ' h-100'));
 
         var carousel_item_row = document.createElement('div');
-        carousel_item_row.setAttribute('class', 'row h-100')
+        carousel_item_row.setAttribute('class', 'row h-100');
 
         for (var j = 0; j < items[i].length; j++) {
             var wardrobe_item = document.createElement('div');
             wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded h-100');
 
             var wardrobe_item_image = document.createElement('div')
+            wardrobe_item_image.setAttribute('class', 'w-100 h-100');
             wardrobe_item_image.style.background = 'url(' + items[i][j].background_image + ') center center / contain no-repeat';
-            wardrobe_item_image.style.width = '100%';
-            wardrobe_item_image.style.height = '100%';
 
             wardrobe_item.appendChild(wardrobe_item_image);
             carousel_item_row.appendChild(wardrobe_item);
@@ -120,6 +119,10 @@ display_wardrobe_items = function (items) {
 };
 
 display_wardrobe_items(items);
+
+wardrobe.addEventListener('resize', function (event) {
+    alert('resized');
+});
 
 wardrobe.addEventListener('wheel', function (event) {
     event.preventDefault();
