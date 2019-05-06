@@ -69,46 +69,53 @@ particlesJS("main-container", {
     },
     "retina_detect": true
 });
-var update;
+let update;
 update = function () {
     requestAnimationFrame(update);
 };
 requestAnimationFrame(update);
 
-// wardrobe-item // temporary will move to database
+// wardrobe-item
+// temporary will move to database
 
-var item_1 = {
+const item_1 = {
     background_image: 'img1.png'
 }
 
-var item_2 = {
+const item_2 = {
     background_image: 'img2.png'
 }
 
-var item_3 = {
+const item_3 = {
     background_image: 'img3.png'
 }
 
-var items = [[item_1, item_1, item_1, item_1], [item_1, item_2, item_3], [item_2, item_2, item_2]];
+const items = [[item_1, item_1, item_1, item_1], [item_1, item_2, item_3], [item_2, item_2, item_2]];
 
-var wardrobe = document.getElementById('container-wardrobe');
+const wardrobe = document.getElementById('container-wardrobe');
 
-display_wardrobe_items = function (items) {
-    for (var i = 0; i < items.length; i++) {
-        var carousel_item = document.createElement('div');
-        carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ' h-100'));
 
-        var carousel_item_row = document.createElement('div');
-        carousel_item_row.setAttribute('class', 'row h-100');
+// function that displays the items 
+let display_wardrobe_items = (items) => {
+    for (let i = 0; i < items.length; i++) {
 
-        for (var j = 0; j < items[i].length; j++) {
-            var wardrobe_item = document.createElement('div');
-            wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded h-100');
+        // create a 'div' element for each set of items
+        let carousel_item = document.createElement('div');
+        carousel_item.setAttribute('class', 'carousel-item' + (i == 0 ? ' active' : ''));
 
-            var wardrobe_item_image = document.createElement('div')
-            wardrobe_item_image.setAttribute('class', 'w-100 h-100');
+        let carousel_item_row = document.createElement('div');
+        carousel_item_row.setAttribute('class', 'row' + ' h-100')
+
+        for (let j = 0; j < items[i].length; j++) {
+
+            // create a 'div' element for each item in the set
+            let wardrobe_item = document.createElement('div');
+            wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded');
+
+            let wardrobe_item_image = document.createElement('div')
             wardrobe_item_image.style.background = 'url(' + items[i][j].background_image + ') center center / contain no-repeat';
 
+            // append this 'div' into the larger 'div' for the set
             wardrobe_item.appendChild(wardrobe_item_image);
             carousel_item_row.appendChild(wardrobe_item);
         }
@@ -127,7 +134,7 @@ wardrobe.addEventListener('resize', function (event) {
 wardrobe.addEventListener('wheel', function (event) {
     event.preventDefault();
 
-    var delta;
+    let delta;
 
     if (event.wheelDelta) {
         delta = event.wheelDelta;
