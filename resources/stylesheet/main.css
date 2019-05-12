@@ -39,7 +39,7 @@
 
 #container-wardrobe {
     width: 100%;
-    background-color:  rgba(98, 182, 203, 0.9);
+    background-color:  rgba(98, 182, 203, 0.7);
     overflow: hidden;
     height: 500px;
     position: absolute;
@@ -54,30 +54,19 @@
 .wardrobe-item {
     height: 80%;
     width: 250px;
+    top: 0px;
+    left: 0px;
     background-color: rgba(255, 255, 255, 1);
-    display: inline-block;
     box-shadow: 5px 0px  rgba(200, 200, 200, 1);
-   
+
+    transition: width;
+    transition-duration: 1s;
 }
 
 .wardrobe-item:hover {
-    background-color:  rgba(220, 220, 220, 0.7);
-    box-shadow: 5px 0px  rgba(160, 160, 160, 0.7);
+    background-color:  rgba(220, 220, 220, 1);
+    box-shadow: 5px 0px  rgba(160, 160, 160, 1);
     cursor: pointer;
-
-}
-
-.wardrobe-item-expanded{
-    background-color: rgba(255, 255, 255, 1);
-    width: 400px;
-    -webkit-transition: width 1s, height 1s, margin 1s;
-    -moz-transition: width 1s, height 1s, margin 1s;
-    -ms-transition: width 1s, height 1s, margin 1s;
-    transition: width 1s, height 1s, margin 1s; /* transitions don't work? */
-    position: absolute;
-    margin: 0;
-    left: -25%;
-    right: 0; 
 }
 
 .description_container{

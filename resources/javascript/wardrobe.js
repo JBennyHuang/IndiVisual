@@ -111,10 +111,20 @@ let display_wardrobe_items = (items) => {
             // create a 'div' element for each item in the set
             let wardrobe_item = document.createElement('div');
             wardrobe_item.setAttribute('class', 'wardrobe-item mx-auto rounded');
+            wardrobe_item.addEventListener('click', (event) => {
+                if (wardrobe_item.offsetWidth == 250) {
+                    wardrobe_item.style = ' \
+                        width: 100%; \
+                        position: absolute;';
+                }
+                else {
+                    wardrobe_item.removeAttribute('style')
+                }
+            });
 
             let wardrobe_item_image = document.createElement('div')
             wardrobe_item_image.style.background = 'url(' + items[i][j].background_image + ') center center / contain no-repeat';
-            wardrobe_item_image.style.width = '100%';
+            wardrobe_item_image.style.width = '250px';
             wardrobe_item_image.style.height = '100%';
 
             // append this 'div' into the larger 'div' for the set
@@ -124,45 +134,44 @@ let display_wardrobe_items = (items) => {
 
         carousel_item.appendChild(carousel_item_row);
         wardrobe.firstElementChild.appendChild(carousel_item);
-        carousel_item.addEventListener('click', clickExpand);
     }
 };
 
 display_wardrobe_items(items);
 
-wardrobe.addEventListener('wheel', function (event) {
-    event.preventDefault();
+// wardrobe.addEventListener('wheel', function (event) {
+//     event.preventDefault();
 
-    let delta;
+//     let delta;
 
-    if (event.wheelDelta) {
-        delta = event.wheelDelta;
-    } else {
-        delta = -1 * event.deltaY;
-    }
+//     if (event.wheelDelta) {
+//         delta = event.wheelDelta;
+//     } else {
+//         delta = -1 * event.deltaY;
+//     }
 
-    if (delta >= 0) {
-        $('.carousel-control-prev').click();
-    } else {
-        $('.carousel-control-next').click();
-    }
+//     if (delta >= 0) {
+//         $('.carousel-control-prev').click();
+//     } else {
+//         $('.carousel-control-next').click();
+//     }
 
-    console.log(delta >= 0);
-});
+//     console.log(delta >= 0);
+// });
 
-function clickExpand(e){
-    
-    //test description, to be set to each item's description
-    var description = '<div class="description_container"><a href="#testDescription" class="accordian_trigger"><h4>Co-Borrower Information</h4></a><hr/><div class="accordian_item" id="accord_item_2"><label> First Name</label><br/><input type="text"/><br/><label>Middle Name</label><br/><input type="text"/><br/><label>Last Name</label><br/><input type="text" /><br/><label>Home Number</label><br/><input type="text"/><br><label>Work Number</label><br/><input type="text"/><br><label>Cell Number</label><br/><input type="text"/><br></div></div>';
+// function wardrobe_item_expand(e) {
 
-    //Should check if the container-wardrobe is expanded or not already, currently !() result is always true
-    if(!($('#container-wardrobe').hasClass("wardrobe-item-expanded"))){
-        previous_container = $('#container-wardrobe').clone();
-        e.target.className += "wardrobe-item-expanded";
-        $('#container-wardrobe').empty().append(e.target).append(description);
-        e.target.addEventListener('click', clickExpand);
-    } else {
-        //Should revert to original container 
-        $('#container-wardrobe').replaceWith(previous_container);
-    }
-};
+//     //test description, to be set to each item's description
+//     var description = '<div class="description_container"><a href="#testDescription" class="accordian_trigger"><h4>Co-Borrower Information</h4></a><hr/><div class="accordian_item" id="accord_item_2"><label> First Name</label><br/><input type="text"/><br/><label>Middle Name</label><br/><input type="text"/><br/><label>Last Name</label><br/><input type="text" /><br/><label>Home Number</label><br/><input type="text"/><br><label>Work Number</label><br/><input type="text"/><br><label>Cell Number</label><br/><input type="text"/><br></div></div>';
+
+//     //Should check if the container-wardrobe is expanded or not already, currently !() result is always true
+//     if (!($('#container-wardrobe').hasClass("wardrobe-item-expanded"))) {
+//         previous_container = $('#container-wardrobe').clone();
+//         e.target.className += "wardrobe-item-expanded";
+//         $('#container-wardrobe').empty().append(e.target).append(description);
+//         e.target.addEventListener('click', clickExpand);
+//     } else {
+//         //Should revert to original container 
+//         $('#container-wardrobe').replaceWith(previous_container);
+//     }
+// };
