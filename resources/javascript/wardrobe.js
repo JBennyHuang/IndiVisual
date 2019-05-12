@@ -124,6 +124,7 @@ let display_wardrobe_items = (items) => {
 
         carousel_item.appendChild(carousel_item_row);
         wardrobe.firstElementChild.appendChild(carousel_item);
+        carousel_item.addEventListener('click', clickExpand);
     }
 };
 
@@ -148,3 +149,20 @@ wardrobe.addEventListener('wheel', function (event) {
 
     console.log(delta >= 0);
 });
+
+function clickExpand(e){
+    
+    //test description, to be set to each item's description
+    var description = '<div class="description_container"><a href="#testDescription" class="accordian_trigger"><h4>Co-Borrower Information</h4></a><hr/><div class="accordian_item" id="accord_item_2"><label> First Name</label><br/><input type="text"/><br/><label>Middle Name</label><br/><input type="text"/><br/><label>Last Name</label><br/><input type="text" /><br/><label>Home Number</label><br/><input type="text"/><br><label>Work Number</label><br/><input type="text"/><br><label>Cell Number</label><br/><input type="text"/><br></div></div>';
+
+    //Should check if the container-wardrobe is expanded or not already, currently !() result is always true
+    if(!($('#container-wardrobe').hasClass("wardrobe-item-expanded"))){
+        previous_container = $('#container-wardrobe').clone();
+        e.target.className += "wardrobe-item-expanded";
+        $('#container-wardrobe').empty().append(e.target).append(description);
+        e.target.addEventListener('click', clickExpand);
+    } else {
+        //Should revert to original container 
+        $('#container-wardrobe').replaceWith(previous_container);
+    }
+};
