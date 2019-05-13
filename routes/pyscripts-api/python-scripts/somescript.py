@@ -1,5 +1,6 @@
 import sys
 
+# note that the arguments are picked up from stdin by calling sys.argv
 def main():
     args = sys.argv
     x = int(args[1])
@@ -8,4 +9,5 @@ def main():
 
 def add(x, y):
     return x+y
+
 main()
