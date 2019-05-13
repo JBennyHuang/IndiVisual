@@ -1,58 +1,21 @@
 const express = require('express');
-
 const app = express();
 
+// directories
+app.use(express.static('routes/pyscripts-api/python'));
 app.use(express.static('resources/html'));
 app.use(express.static('resources/stylesheet'));
 app.use(express.static('resources/javascript'));
-
-// bootstrap
+app.use(express.static('resources/images')); // temporary
 app.use(express.static('node_modules/bootstrap/dist'));
-
-// jquery
 app.use(express.static('node_modules/jquery/dist'))
 
-// temp // will be moved to database
-app.use(express.static('resources/images'));
+// routes
+app.use('/', require('./routes/index.js')); // home
+app.use('/api/pyscripts/', require('./routes/pyscripts-api.js')); // api to call python scripts
 
-app.get('/', function (req, res) {
-    res.sendFile('index.html');
-});
-
-
-
-/***********************************TESTING BLOCK FOR PYTHON-SHELL***********************************/
-const {PythonShell} = require('python-shell');
-
-// Default options for the shell
-PythonShell.defaultOptions = {scriptPath: 'resources/python'};
-
-// Customized options for different commands
-let options = {
-    mode: 'text', // specifies in which mode the data is going to be sent to Python
-    args: [1,2]
-};
-
-// Execute a Python script, providing input from stdio
-PythonShell.run('somescript.py', options, (err, num) => {
-    if (err) throw err;
-    console.log('%j', num); // prints ["3"] to the console
-});
-
-// Running a shell and giving input until we exit
-let pyshell = new PythonShell('otherscript.py');
-pyshell.send(JSON.stringify([9, 4, 2, 0, 1]));
-pyshell.on('message', (message) => {
-    console.log(message);
-});
-pyshell.end((err) => {
-    if (err) throw err;
-    console.log('Shell Exited');
-});
-
-// Documentation on https://www.npmjs.com/package/python-shell 
-
-/***************************************************************************************************/
-app.listen(3000);
-
-console.log('server started...')
+// // Either uses the environment variable PORT or 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`server started on localhost:${PORT}`)
+})
