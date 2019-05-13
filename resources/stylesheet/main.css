@@ -1,8 +1,9 @@
 #main-header {
+    width: 100%;
+
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
 
     overflow: hidden;
 }
@@ -12,10 +13,10 @@
 }
 
 #main-container {
-    position: absolute;
-    left: 0;
     width: 100%;
     height: auto;
+
+    position: absolute;
 
     background-color:  rgba(240, 248, 255, 0.7);
 
@@ -38,10 +39,7 @@
 }
 
 #container-wardrobe {
-    width: 100%;
     background-color:  rgba(98, 182, 203, 0.7);
-    overflow: hidden;
-    height: 500px;
 }
 
 .container-block {
@@ -63,13 +61,7 @@
     background-color:  rgba(220, 220, 220, 1);
     cursor: pointer;
 }
-
-.description_container{
-    position: absolute;
-    margin: 2%;
-    left: 50%;
-}
-
+  
 .carousel-control-prev, .carousel-control-next {
     opacity: 0.7;
 }

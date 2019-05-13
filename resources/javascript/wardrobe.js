@@ -136,10 +136,17 @@ let display_wardrobe_items = (items) => {
             wardrobe_item.setAttribute('class', 'wardrobe-item h-75 mx-auto my-auto rounded');
             wardrobe_item.addEventListener('click', (event) => {
                 if (wardrobe_item.offsetWidth == 250) {
-                    wardrobe_item.style = 'width: 100%; position: absolute;'
-                }
-                else {
-                    wardrobe_item.removeAttribute('style')
+                    for (let k = 0; k < items[i].length; k++) {
+                        if (j != k) {
+                            wardrobe_item.parentNode.children[k].style = 'width: 0px;';
+                        } else {
+                            wardrobe_item.parentNode.children[k].style = 'width: 100%;';
+                        }
+                    }
+                } else {
+                    for (let k = 0; k < items[i].length; k++) {
+                        wardrobe_item.parentNode.children[k].removeAttribute('style');
+                    }
                 }
             });
 
@@ -167,41 +174,4 @@ let display_wardrobe_items = (items) => {
     wardrobe.appendChild(carousel_row);
 };
 
-display_wardrobe_items(items);
-
-// wardrobe.addEventListener('wheel', function (event) {
-//     event.preventDefault();
-
-//     let delta;
-
-//     if (event.wheelDelta) {
-//         delta = event.wheelDelta;
-//     } else {
-//         delta = -1 * event.deltaY;
-//     }
-
-//     if (delta >= 0) {
-//         $('.carousel-control-prev').click();
-//     } else {
-//         $('.carousel-control-next').click();
-//     }
-
-//     console.log(delta >= 0);
-// });
-
-// function wardrobe_item_expand(e) {
-
-//     //test description, to be set to each item's description
-//     var description = '<div class="description_container"><a href="#testDescription" class="accordian_trigger"><h4>Co-Borrower Information</h4></a><hr/><div class="accordian_item" id="accord_item_2"><label> First Name</label><br/><input type="text"/><br/><label>Middle Name</label><br/><input type="text"/><br/><label>Last Name</label><br/><input type="text" /><br/><label>Home Number</label><br/><input type="text"/><br><label>Work Number</label><br/><input type="text"/><br><label>Cell Number</label><br/><input type="text"/><br></div></div>';
-
-//     //Should check if the container-wardrobe is expanded or not already, currently !() result is always true
-//     if (!($('#container-wardrobe').hasClass("wardrobe-item-expanded"))) {
-//         previous_container = $('#container-wardrobe').clone();
-//         e.target.className += "wardrobe-item-expanded";
-//         $('#container-wardrobe').empty().append(e.target).append(description);
-//         e.target.addEventListener('click', clickExpand);
-//     } else {
-//         //Should revert to original container 
-//         $('#container-wardrobe').replaceWith(previous_container);
-//     }
-// };
+display_wardrobe_items(items); 
