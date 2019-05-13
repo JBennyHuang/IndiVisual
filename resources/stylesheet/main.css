@@ -1,8 +1,9 @@
 #main-header {
+    width: 100%;
+
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
 
     overflow: hidden;
 }
@@ -12,10 +13,10 @@
 }
 
 #main-container {
-    position: absolute;
-    left: 0;
     width: 100%;
     height: auto;
+
+    position: absolute;
 
     background-color:  rgba(240, 248, 255, 0.7);
 
@@ -38,36 +39,29 @@
 }
 
 #container-wardrobe {
-    width: 100%;
-
-    background-color:  rgba(98, 182, 203, 0.9);
-
-    overflow: hidden;
+    background-color:  rgba(98, 182, 203, 0.7);
 }
 
 .container-block {
     height: 500px;
+    width: 100%;
+
+    overflow: hidden;
 }
 
 .wardrobe-item {
-    height: 80%;
     width: 250px;
-
+    float: left;
     background-color: rgba(255, 255, 255, 1);
 
-    display: inline-block;
-
-    box-shadow: 5px 0px  rgba(200, 200, 200, 1);
+    transition: width 1s;
 }
 
 .wardrobe-item:hover {
-    background-color:  rgba(220, 220, 220, 0.7);
-
-    box-shadow: 5px 0px  rgba(160, 160, 160, 0.7);
-
+    background-color:  rgba(220, 220, 220, 1);
     cursor: pointer;
 }
-
+  
 .carousel-control-prev, .carousel-control-next {
     opacity: 0.7;
 }
