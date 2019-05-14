@@ -13,7 +13,8 @@
     "jquery": "^3.4.1",
     "particles.js": "^2.0.0",
     "popper.js": "^1.15.0",
-    "python-shell": "^1.0.7"
+    "python-shell": "^1.0.7",
+    "ws": "^7.0.0"
   },
   "repository": {
     "type": "git",
