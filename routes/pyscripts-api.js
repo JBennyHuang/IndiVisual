@@ -1,12 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const pyScripts = require('./pyscripts-api/pyscripts.js')
+const request = require('request');
+const domain = 'localhost';
+const targetPORT = 9000;
 
-// make a GET request to the api
-// must include two fields in the request: scriptName and args
-// refer to pyScripts(...) for its signature
 router.get('/', (req, res) => {
-    pyScripts(req.query.scriptName, req.query.args, res);
+    const scriptName = req.query.scriptName;
+    const args = req.query.args;
+
+    let options = {
+        url: `http://${domain}:${targetPORT}/pyscripts`,
+        methods: 'GET',
+        qs: {
+            scriptName: scriptName,
+            args: args
+        }
+    }
+    request(options, (err, response, body) => {
+        if (err) throw err;
+        else res.send(body);
+    });
 });
 
 module.exports = router;

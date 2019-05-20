@@ -8,14 +8,20 @@ const { PythonShell } = require('python-shell');
 //      res         : the response that is sent after the script is executed
 function pyScript(scriptName, argv, res) {
     let options = {
-        scriptPath: './routes/pyscripts-api/python-scripts',
+        scriptPath: './routes/pyscripts/python-scripts',
         mode: 'text',
         args: JSON.parse(argv)
     }
     PythonShell.run(scriptName, options, (err, output) => {
-        if (err) throw err;
-        else res.send(output);
-    })
+        if (err) res.sned({
+            success: false,
+            body: err
+        });
+        else res.send({
+            success: true,
+            body: output
+        });
+    });
 }
 
 module.exports = pyScript;
