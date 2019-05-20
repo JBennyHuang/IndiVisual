@@ -13,7 +13,7 @@ function pyScript(scriptName, argv, res) {
         args: JSON.parse(argv)
     }
     PythonShell.run(scriptName, options, (err, output) => {
-        if (err) res.sned({
+        if (err) res.send({
             success: false,
             body: err
         });
