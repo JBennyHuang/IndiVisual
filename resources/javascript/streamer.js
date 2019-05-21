@@ -2,7 +2,10 @@
 const video = document.querySelector('video');
 
 // request access to webcam
-navigator.mediaDevices.getUserMedia({video: {width: 426, height: 240}}).then((stream) => video.srcObject = stream);
+navigator.mediaDevices.getUserMedia({video: {
+    width: { min: 480, ideal: 720, max: 1080 },
+    height: { min: 480, ideal: 720, max: 1080 }
+  }}).then((stream) => video.srcObject = stream);
 
 // returns a frame encoded in base64
 const getFrame = () => {
@@ -13,6 +16,7 @@ const getFrame = () => {
     const data = canvas.toDataURL('image/png');
     return data;
 }
+
 const WS_URL = location.origin.replace(/^http/, 'ws');
 const FPS = 3;
 const ws = new WebSocket(WS_URL);
