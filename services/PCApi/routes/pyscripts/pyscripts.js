@@ -1,11 +1,14 @@
 const { PythonShell } = require('python-shell');
 
-// pyScript(...) opens up a python shell and executes a python script
-//
-// params 
-//      scriptName  : a string representing the name of the script 
-//      argv        : an array of parameters that are passed to the script
-//      res         : the response that is sent after the script is executed
+/**
+ * pyScript(scriptName, argv, res) opens up a python shell and executes a python script
+ * 
+ * @param {string} scriptName   : a string 
+ * @param {any[]} argv          : an array of parameters that are passed to the script
+ * @param {Response} res        : the response that is sent after the script is executed
+ * 
+ * @returns {JSON}
+ */
 function pyScript(scriptName, argv, res) {
     let options = {
         scriptPath: './routes/pyscripts/python-scripts',
