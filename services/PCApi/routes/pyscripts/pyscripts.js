@@ -3,7 +3,7 @@ const { PythonShell } = require('python-shell');
 /**
  * pyScript(scriptName, argv, res) opens up a python shell and executes a python script
  * 
- * @param {string} scriptName   : a string 
+ * @param {string} scriptName   : a string representing the name of the script
  * @param {any[]} argv          : an array of parameters that are passed to the script
  * @param {Response} res        : the response that is sent after the script is executed
  * 
