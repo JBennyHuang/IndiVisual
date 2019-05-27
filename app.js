@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 
 // directories
-app.use(express.static('resources/html'));
 app.use(express.static('resources/stylesheet'));
 app.use(express.static('resources/javascript'));
 app.use(express.static('resources/images')); // temporary
