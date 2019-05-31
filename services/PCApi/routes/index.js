@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pyScripts = require('./pyscripts/pyscripts.js');
+const pyCom = require('./pycom/pycom.js');
 
 // default message
 router.get('/', (req, res) => {
@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
 });
 
 // must include two fields in the request: scriptName and args
-// refer to pyScripts(...) for its signature
-router.get('/pyscripts', (req, res) => {
-    pyScripts(req.query.scriptName, req.query.args, res);
+// refer to pyCom(...) for its signature
+router.get('/pycom', (req, res) => {
+    pyCom(req.query.scriptName, req.query.args, res);
 });
 
 module.exports = router;

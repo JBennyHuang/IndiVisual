@@ -1,7 +1,8 @@
 const { PythonShell } = require('python-shell');
+const spacing = 7;
 
 /**
- * pyScript(scriptName, argv, res) opens up a python shell and executes a python script
+ * pyCom(scriptName, argv, res) opens up a python shell and executes a python script
  * 
  * @param {string} scriptName   : a string representing the name of the script
  * @param {any[]} argv          : an array of parameters that are passed to the script
@@ -9,22 +10,30 @@ const { PythonShell } = require('python-shell');
  * 
  * @returns {JSON}
  */
-function pyScript(scriptName, argv, res) {
+function pyCom(scriptName, argv, res) {
     let options = {
-        scriptPath: './routes/pyscripts/python-scripts',
+        scriptPath: './routes/pycom/python-scripts',
         mode: 'text',
         args: JSON.parse(argv)
     }
+
     PythonShell.run(scriptName, options, (err, output) => {
-        if (err) res.send({
-            success: false,
-            body: err
-        });
-        else res.send({
+
+        let api_response = {
             success: true,
             body: output
-        });
+        }
+
+        if (err) {
+            api_response = {
+                success: false,
+                body: err
+            }
+        }
+
+        // Easier to read in PostMan
+        res.send(JSON.stringify(api_response, null, spacing));
     });
 }
 
-module.exports = pyScript;
+module.exports = pyCom;

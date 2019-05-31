@@ -24,5 +24,7 @@
   },
   "homepage": "https://github.com/JBennyHuang/IndiVisual#readme",
   "description": "1. Install <a href = \"https://nodejs.org/en/download/\" target=\"_blank\"> Node.JS </a>",
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }

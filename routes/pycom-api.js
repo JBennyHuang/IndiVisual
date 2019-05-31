@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
     const args = req.query.args;
 
     let options = {
-        url: `http://${domain}:${targetPORT}/pyscripts`,
-        methods: 'GET',
+        url: `http://${domain}:${targetPORT}/pycom`,
+        method: 'GET',
         qs: {
             scriptName: scriptName,
             args: args
