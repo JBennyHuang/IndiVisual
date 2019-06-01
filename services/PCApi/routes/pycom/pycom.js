@@ -1,8 +1,7 @@
 const { PythonShell } = require('python-shell');
-const spacing = 7;
 
 /**
- * pyCom(scriptName, argv, res) opens up a python shell and executes a python script
+ * @function pyCom(...) opens up a python shell and executes a python script
  * 
  * @param {string} scriptName   : a string representing the name of the script
  * @param {any[]} argv          : an array of parameters that are passed to the script
@@ -31,8 +30,7 @@ function pyCom(scriptName, argv, res) {
             }
         }
 
-        // Easier to read in PostMan
-        res.send(JSON.stringify(api_response, null, spacing));
+        res.send(api_response);
     });
 }
 

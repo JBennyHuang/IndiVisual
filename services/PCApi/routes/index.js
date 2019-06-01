@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 const pyCom = require('./pycom/pycom.js');
 
-// default message
+/**
+ * @route           : default route with default message
+ * 
+ * @returns {JSON}  : {  success: , message: }
+ */
 router.get('/', (req, res) => {
     res.send({
         success: true,
@@ -10,8 +14,13 @@ router.get('/', (req, res) => {
     });
 });
 
-// must include two fields in the request: scriptName and args
-// refer to pyCom(...) for its signature
+/**
+ * @route           : gets the stdout of a python script
+ * 
+ * @requires        : scriptName and args parameters
+ * 
+ * @returns {JSON}  : { success: , message: }
+ */
 router.get('/pycom', (req, res) => {
     pyCom(req.query.scriptName, req.query.args, res);
 });

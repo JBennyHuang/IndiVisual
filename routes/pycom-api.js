@@ -5,16 +5,11 @@ const domain = 'localhost';
 const targetPORT = 9000;
 
 router.get('/', (req, res) => {
-    const scriptName = req.query.scriptName;
-    const args = req.query.args;
 
     let options = {
         url: `http://${domain}:${targetPORT}/pycom`,
         method: 'GET',
-        qs: {
-            scriptName: scriptName,
-            args: args
-        }
+        qs: req.query
     }
     request(options, (err, response, body) => {
         if (err) throw err;
