@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+// use express JSON middleware
+app.use(express.json());
+
 // routes to different databases
 app.use('/postgresdb', require('./databases/postgres-db.js'));
 

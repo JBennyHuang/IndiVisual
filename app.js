@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // Express JSON Middleware
-app.use(express.json())
+app.use(express.json());
 
 // directories
 app.use(express.static('resources/stylesheet'));
@@ -20,19 +20,4 @@ app.use('/api/database', require('./routes/database-api.js'));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`server started on port ${PORT}`);
-
-    // testing
-    const request = require('request');
-    let obj = {
-        key: 'value',
-        some: 'obj'
-    }
-    let options = {
-        url: 'http://localhost:3000/api/database/test',
-        method: 'POST',
-        json: obj
-    }
-    request(options, (err, response, body) => {
-        console.log(body);
-    });
 });

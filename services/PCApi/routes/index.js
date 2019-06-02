@@ -3,7 +3,7 @@ const router = express.Router();
 const pyCom = require('./pycom/pycom.js');
 
 /**
- * @route           : default route with default message
+ * @route {GET}     : default route with default message
  * 
  * @returns {JSON}  : {  success: , message: }
  */
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 /**
- * @route           : gets the stdout of a python script
+ * @route {GET}     : gets the stdout of a python script
  * 
  * @requires        : scriptName and args parameters
  * 
