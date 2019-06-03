@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { Client } = require('pg');
-const { getQueryResponse, postQueryResponse, putQueryResponse, deleteQueryResponse } = require('./libs/query-response.js');
-const { getQueryFormat, postQueryFormat, putQueryFormat, deleteQueryFormat } = require('./libs/query-format.js');
+const { getQueryResponse, postQueryResponse, putQueryResponse, deleteQueryResponse } = require('../libs/query-response.js');
+const { getQueryFormat, postQueryFormat, putQueryFormat, deleteQueryFormat } = require('../libs/query-format.js');
 
 // use environment variable to connect to the db
 const settings = {
