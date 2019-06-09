@@ -1,0 +1,15 @@
+{
+  "name": "pcapi",
+  "version": "1.0.0",
+  "description": "Python Communication API",
+  "main": "PCApi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.0",
+    "python-shell": "^1.0.7"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "dbapi",
+  "version": "1.0.0",
+  "description": "Database API",
+  "main": "DBApi.js",
+  "scripts": {
+    "start": "bash ./start_dbapi.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.11.0"
+  }
+}
