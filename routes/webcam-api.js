@@ -6,4 +6,10 @@ router.get('/', (req, res) => {
     res.sendFile("streamer.html", { root: "resources/html" });
 });
 
+router.get('/start', (req, res) => {
+
+    
+    res.sendFile("streamer.html", { root: "resources/html" });
+});
+
 module.exports = router;
