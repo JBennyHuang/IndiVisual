@@ -19,6 +19,10 @@ app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
 
+app.get('/products', function (req, res) {
+    res.sendFile('products.html', {root: 'resources/html'});
+});
+
 
 
 /***********************************TESTING BLOCK FOR PYTHON-SHELL***********************************/

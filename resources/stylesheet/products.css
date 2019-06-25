@@ -1,0 +1,118 @@
+body {
+    overflow-x: hidden;
+}
+
+#main-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+}
+
+.navbar-brand {
+    position: absolute;
+}
+
+#main-container {
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+
+    background-color:  rgba(240, 248, 255, 0.7);
+
+    overflow: hidden;
+}
+
+#main-container canvas{
+    position: absolute;
+    top :0;
+    z-index: -1;
+}
+
+.nav-pills {
+    position: fixed;
+    border: none;
+    box-shadow: 1px 1px 1px 0 rgba(18, 46, 59, 0.1), 2px 4px 10px 0 rgba(18, 46, 59, 0.1);
+    border-radius: 5px;
+    margin-left: 1%;
+    margin-top: 5%;
+    height: auto;
+    overflow: hidden;
+}
+
+body {
+    background-color: white;
+}
+
+.first-row {
+    position: relative;
+    margin-top: 5%;
+    margin-left:15%;
+    width: 100%;
+}
+
+.next-row {
+    position: relative;
+    margin-top: 29%;
+    margin-left:15%;
+    width: 100%;
+}
+
+h5, p, a {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tab-card {
+    background-color: white;
+    border:1px solid white;
+    box-shadow: 2px 4px 10px 0 rgba(18, 46, 59, 0.1), 2px 4px 10px 0 rgba(18, 46, 59, 0.1);
+    border-radius: 5px;
+    position: absolute;
+}
+.tab-card:hover {
+    box-shadow: 2px 4px 15px 0 rgba(12, 30, 39, 0.1), 2px 4px 15px 0 rgba(12, 30, 39, 0.1);
+}
+
+.tab-content {
+    margin: auto;
+}
+
+
+/*For card tabs*/
+
+/*
+.tab-card-header {
+  background: none;
+}
+
+.tab-card-header > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tab-card-header > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tab-card-header > .nav-tabs > li > a {
+  border: 0;
+  border-bottom:2px solid transparent;
+  margin: 0;
+  color: grey;
+  padding: 2px 15px;
+}
+
+.tab-card-header > .nav-tabs > li > a.show {
+    border-bottom:2px solid blue;
+    color: blue;
+}
+.tab-card-header > .nav-tabs > li > a:hover {
+    color: blue;
+}
+
+.tab-card-header > .tab-content {
+  padding-bottom: 0;
+}
+*/
