@@ -1,0 +1,143 @@
+<html>
+
+<head>
+  <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+  <style>
+    /* .form-control {
+            border: none;
+            border-bottom: 1px solid #0074d9;
+            border-radius: 0px;
+            box-shadow: none;
+          }
+
+          .form-control:focus {
+            box-shadow: none;
+          } */
+
+    .modal-header {
+      height: 128px;
+      border-bottom: none;
+    }
+
+    .modal-header-image {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -75%);
+    }
+
+    .modal-footer {
+      border-top: none;
+    }
+
+    .btn-lucid {
+      color: #ffffff;
+      background-color: #4AC6C6;
+      border-color: #4AC6C6;
+    }
+
+    .btn-lucid:hover,
+    .btn-lucid:focus,
+    .btn-lucid:active,
+    .btn-lucid.active,
+    .open .dropdown-toggle.btn-lucid {
+      color: #ffffff;
+      background-color: #0AABAB;
+      border-color: #4AC6C6;
+    }
+
+    .btn-lucid:active,
+    .btn-lucid.active,
+    .open .dropdown-toggle.btn-lucid {
+      background-image: none;
+    }
+
+    .btn-lucid.disabled,
+    .btn-lucid[disabled],
+    fieldset[disabled] .btn-lucid,
+    .btn-lucid.disabled:hover,
+    .btn-lucid[disabled]:hover,
+    fieldset[disabled] .btn-lucid:hover,
+    .btn-lucid.disabled:focus,
+    .btn-lucid[disabled]:focus,
+    fieldset[disabled] .btn-lucid:focus,
+    .btn-lucid.disabled:active,
+    .btn-lucid[disabled]:active,
+    fieldset[disabled] .btn-lucid:active,
+    .btn-lucid.disabled.active,
+    .btn-lucid[disabled].active,
+    fieldset[disabled] .btn-lucid.active {
+      background-color: #4AC6C6;
+      border-color: #4AC6C6;
+    }
+
+    .btn-lucid .badge {
+      color: #4AC6C6;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button> -->
+
+  <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"> -->
+  <form method='post'>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img class='modal-header-image' width='192px' height='192px' src='login-avatar.png'></img>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class='input-group mb-3'>
+              <div class="input-group-prepend">
+                <span class='input-group-text'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name='username'>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class='input-group mb-3'>
+              <div class="input-group-prepend">
+                <span class='input-group-text'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                  </svg>
+                </span>
+              </div>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                name='password'>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-lucid">Authenticate</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- </div> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

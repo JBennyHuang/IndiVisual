@@ -7,7 +7,7 @@ app.use(express.json());
 // directories
 app.use(express.static('resources/stylesheet'));
 app.use(express.static('resources/javascript'));
-app.use(express.static('resources/images')); // temporary
+app.use(express.static('resources/images')); // move to database
 app.use(express.static('node_modules/bootstrap/dist'));
 app.use(express.static('node_modules/jquery/dist'))
 
